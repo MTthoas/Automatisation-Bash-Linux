@@ -1,0 +1,15 @@
+====
+create
+amin
+/amin/nairi
+2029-25-01
+/bin/sh
+1090
+====
+modify
+amin
+/amin/nairi
+2029-25-01
+/bin/sh
+1095
+====
