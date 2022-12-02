@@ -38,7 +38,7 @@ do
 
         if(($choix == 4));then
             echo "Programme terminé"
-            break
+            exit 0
         fi
 
     fi
@@ -363,6 +363,7 @@ do
 
                             while true;
                             do
+                                echo ""
                                 echo "Voulez-vous ajouter cet utilisateur au groupe sudoUsers ? (O/N)"
                                 read rep
 
@@ -857,6 +858,7 @@ do
                             
                         case $errorVar in
                             0) echo "L'utilisateur $nameDelete a été supprimé avec succès"
+                                break
                                 ;;
                             1) echo "L'utilisateur $nameDelete n'existe pas"
                                 ;;
