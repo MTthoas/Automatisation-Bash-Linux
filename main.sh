@@ -348,6 +348,7 @@ do
                                 else
                                     echo "Le shell n'existe pas, installation en cours"
                                     ln -s dash  $shell    
+                                    echo ""
                                 fi
 
                                 break
@@ -396,7 +397,7 @@ do
 
                     # Modifier nom utilisateur
 
-                        if ! grep -q ${arr[$i+2]} /etc/passwd | cut -d: -f1
+                        if ! getent passwd  ${arr[$i+2]} > /dev/null 2&>1
                         then
                             usermod -l ${arr[$i+2]} ${arr[$i+1]}
                             echo "Le nom de ${arr[$i+2]} a été modifié avec succès"
@@ -421,7 +422,7 @@ do
                                 usermod -d ${arr[$i+3]} ${arr[$i+1+$plus]}
                                 mkdir -p "/etc/home/${arr[$i+3]}"
                                 mv "/etc/home/"${arr[$i+3]} "/etc/home/"~${arr[$i+1+plus]}
-                                groupdel -f ${arr[$i+1+plus]}
+                                # groupdel -f ${arr[$i+1+plus]}
                                 rm -r "/etc/home/"~${arr[$i+1+plus]}
                                 echo "Le chemin du dossier utilisateur de ${arr[$i+2]} a été modifié avec succès"
                             fi
