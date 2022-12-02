@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo ./main.sh || (sudo apt install bash && sudo ./main/sh)
+# sudo ./main.sh || (sudo apt install bash && sudo ./main.sh)
 
 if [ $(id -u) -ne 0 ]; then
     echo "Vous n'etes pas l'administrateur"
